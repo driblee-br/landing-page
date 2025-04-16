@@ -1,0 +1,333 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    padding: 1rem 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 8rem 5% 6rem 5%;
+    background-image: url('images/stadium.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-quemsomos {
+    background-image: url('images/torcida.jpg');
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.75); /* This controls the overlay transparency */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.6rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #333;
+    line-height: 1.2;
+}
+
+.hero-subtext {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #0056b3;
+}
+
+/* Mission Section */
+.mission {
+    padding: 4rem 5%;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+.mission h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.mission-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Features Section */
+.features {
+    padding: 4rem 0;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+    .features {
+        padding: 4rem 5%;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+.feature {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #333;
+    min-height: 4.5rem; /* Accommodate two lines of text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-text {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    min-height: 4.8rem; /* Accommodate three lines of text */
+    display: block;
+    text-align: center;
+}
+
+.feature img {
+    width: 100%;
+    height: 250px; /* Fixed height for all images */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .feature h2 {
+        min-height: auto; /* Reset on mobile */
+    }
+    .feature-text {
+        min-height: auto; /* Reset on mobile */
+    }
+}
+
+/* Testimonial Section */
+.testimonial {
+    padding: 4rem 5%;
+    background: #007bff;
+    text-align: center;
+    color: white;
+}
+
+blockquote {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.author-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 0 0 1px #000;
+}
+
+.author-name {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Founders Section */
+.founders {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 5%;
+}
+
+.founder {
+    text-align: center;
+}
+
+.founder-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 4px solid white;
+    box-shadow: 0 0 0 1px #000;
+}
+
+.founder h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.founder-role {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.founder-bio {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+@media (max-width: 1200px) {
+    .founders {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .founders {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    .founder-bio {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Footer */
+footer {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.copyright {
+    color: #666;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero {
+        padding: 2rem 5%;
+    }
+
+    blockquote {
+        font-size: 1rem;
+    }
+}
