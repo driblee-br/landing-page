@@ -1,0 +1,115 @@
+﻿Política de Privacidade
+Data de Vigência: 01/03/2025
+Última atualização: Março de 2025
+________________
+
+
+1. Introdução
+Bem-vindo à Driblee ("nós", "nosso" ou "aplicativo"). Esta Política de Privacidade detalha como coletamos, utilizamos, armazenamos e protegemos suas informações pessoais ao utilizar nossos serviços através do nosso site, bem como das plataformas Meta (Facebook, Instagram e WhatsApp).
+Ao acessar ou utilizar nossos serviços, você concorda com os termos descritos nesta política. Caso não concorde, recomendamos que não utilize nossos serviços.
+________________
+
+
+2. Informações que coletamos
+Ao utilizar nossos serviços, podemos coletar as seguintes categorias de informações:
+a) Informações fornecidas diretamente pelo usuário:
+* Nome
+
+* E-mail
+
+* Foto de perfil
+
+* ID de usuário das plataformas Meta (Facebook, Instagram, WhatsApp)
+
+* Outras informações pessoais fornecidas voluntariamente ao utilizar nossos serviços.
+
+b) Informações coletadas automaticamente:
+   * Endereço IP
+
+   * Tipo de dispositivo utilizado (celular, computador, etc.)
+
+   * Sistema operacional
+
+   * Navegador e dados de navegação no aplicativo
+
+   * Informações sobre interações com nosso serviço
+
+________________
+
+
+3. Como utilizamos suas informações
+Utilizamos as informações coletadas para:
+      * Possibilitar autenticação através das plataformas Meta (Facebook, Instagram e WhatsApp)
+
+      * Fornecer, operar e melhorar continuamente nossos serviços
+
+      * Personalizar a experiência do usuário, tornando nossos serviços mais relevantes
+
+      * Cumprir obrigações legais e regulatórias
+
+      * Prestar suporte técnico e responder às suas solicitações
+
+________________
+
+
+4. Compartilhamento das informações
+A Driblee não vende, aluga ou compartilha suas informações pessoais com terceiros, exceto nas situações a seguir:
+         * Quando exigido por autoridades legais ou regulatórias
+
+         * Com parceiros comerciais e técnicos que auxiliam na operação do aplicativo, sempre sob rigorosos acordos de confidencialidade
+
+         * Para fornecer suporte técnico, garantir segurança e melhorar a qualidade dos serviços
+
+________________
+
+
+5. Proteção e Segurança dos Dados
+Adotamos medidas técnicas e administrativas adequadas para garantir a segurança dos seus dados pessoais contra perda, uso indevido, acesso não autorizado ou divulgação indevida. Apesar de nossos esforços, nenhuma transmissão de dados pela internet pode ser garantida como 100% segura. Por isso, solicitamos que você também tome medidas preventivas para proteger suas informações pessoais.
+________________
+
+
+6. Uso das APIs da Meta
+Nosso aplicativo segue rigorosamente os Termos e Políticas das plataformas Meta, não compartilhando dados dos usuários fora das diretrizes estabelecidas especificamente pelas plataformas:
+            * Política da Plataforma do Facebook
+
+            * Política da Plataforma do Instagram
+
+            * Política Comercial do WhatsApp
+
+________________
+
+
+7. Seus direitos e opções sobre os dados pessoais
+Você possui total controle sobre suas informações pessoais. Em qualquer momento, você pode:
+               * Solicitar acesso às informações que mantemos sobre você
+
+               * Corrigir ou atualizar seus dados pessoais
+
+               * Solicitar exclusão completa dos seus dados pessoais do nosso banco de dados
+
+Para exercer esses direitos, entre em contato conosco pelo e-mail informado abaixo.
+________________
+
+
+8. Cookies e tecnologias semelhantes
+Podemos utilizar cookies e tecnologias semelhantes para coletar informações sobre o uso dos serviços e melhorar sua experiência. Você pode gerenciar preferências de cookies diretamente nas configurações do seu navegador.
+________________
+
+
+9. Atualizações da Política de Privacidade
+Podemos atualizar esta Política periodicamente para refletir mudanças legais ou operacionais. Alterações significativas serão comunicadas através dos nossos canais oficiais. Recomendamos que você revise regularmente esta página.
+________________
+
+
+10. Lei Aplicável
+Esta Política de Privacidade está sujeita à legislação brasileira, especialmente à Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018).
+________________
+
+
+11. Contato
+Para dúvidas, esclarecimentos ou para exercer qualquer um dos seus direitos relacionados aos seus dados pessoais, entre em contato conosco através dos seguintes meios:
+                  * E-mail: contato@driblee.com
+
+                  * Telefone: +55 11 94345-6549
+
+                  * Endereço: Rua Cunha Gago 162, Conj. 105, Pinheiros, São Paulo, SP, CEP: 05421-000
