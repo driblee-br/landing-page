@@ -6,21 +6,29 @@
     // SDK initialization
     window.fbAsyncInit = function () {
         FB.init({
-            appId: '1703147563952436', // your app ID goes here
+            appId: '1703147563952436',
             autoLogAppEvents: true,
             xfbml: true,
-            version: 'v22.0' // Graph API version goes here
+            version: 'v22.0'
         });
     };
 
     // Session logging message event listener
-    window.addEventListener('message', (event) => {
+    window.addEventListener('message', async (event) => {
         if (event.origin !== "https://www.facebook.com" && event.origin !== "https://web.facebook.com") return;
         try {
             const data = JSON.parse(event.data);
             if (data.type === 'WA_EMBEDDED_SIGNUP') {
                 console.log('message event: ', data); // remove after testing
-                // your code goes here
+                const response = await fetch('https://api.drible.com/api/whatsapp/embedded-signup/events', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+
+                    })
+                });
             }
         } catch {
             console.log('message event: ', event.data); // remove after testing
