@@ -7,19 +7,24 @@
     <title>Driblee - Conectando Torcedores, Impulsionando Paixões</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽️</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&amp;family=Montserrat:wght@800&amp;display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="font-face.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo">Driblee</a>
-            <a href="quemsomos.html" class="nav-link">Quem somos?</a>
+            <a href="index.html" class="logo">
+                <img src="images/driblee_logo.png" alt="Driblee">
+                <span class="logo-text">Driblee</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="produtos.html" class="nav-link">Planos</a>
+                <a href="quemsomos.html" class="nav-link">Quem Somos</a>
+            </div>
         </nav>
     </header>
 
@@ -45,21 +50,56 @@
                 <h2>Mais vendas</h2>
                 <p class="feature-text">Aumente as vendas do seu clube com nossa solução completa de e-commerce e
                     marketplace.</p>
-                <img src="images/sales.jpg" alt="Mais vendas">
+                <img src="./images/sales.jpg" alt="Mais vendas">
             </div>
 
             <div class="feature">
                 <h2>Suporte automatizado</h2>
                 <p class="feature-text">Atenda seus torcedores 24 horas por dia, 7 dias por semana com nossa solução de
                     atendimento automatizado.</p>
-                <img src="images/support.jpg" alt="Suporte automatizado">
+                <img src="./images/support.jpg" alt="Suporte automatizado">
             </div>
 
             <div class="feature">
                 <h2>Mais engajamento</h2>
                 <p class="feature-text">Engaje seus torcedores com conteúdo personalizado e campanhas específicas para
                     cada perfil.</p>
-                <img src="images/engagement.jpg" alt="Mais engajamento">
+                <img src="./images/engagement.jpg" alt="Mais engajamento">
+            </div>
+        </section>
+
+        <section class="mission">
+            <h2>Planos para Torcedores</h2>
+            <p class="mission-text">Escolha o melhor plano para você aproveitar ainda mais seu time do coração</p>
+        </section>
+
+        <section class="plans">
+            <div class="plan-card">
+                <span class="promo-tag">1 mês grátis para os 500 primeiros!</span>
+                <h2 class="plan-title">TORCIDA PREMIADA</h2>
+                <div class="plan-price">
+                    R$ 24,90 <small>/mês</small>
+                </div>
+                <ul class="benefits-list">
+                    <li>💰 R$24,90 de volta em créditos</li>
+                    <li>🎟️ 4 ingressos por ano</li>
+                    <li>🎁 Sorteios semanais</li>
+                </ul>
+                <a href="https://wa.me/5511983208113" class="cta-button">Ativar no WhatsApp</a>
+            </div>
+
+            <div class="plan-card">
+                <span class="promo-tag">1 mês grátis para os 500 primeiros!</span>
+                <h2 class="plan-title">TORCIDA NA TELA</h2>
+                <div class="plan-price">
+                    R$ 39,90 <small>/mês</small>
+                </div>
+                <ul class="benefits-list">
+                    <li>📺 Acesso ao Premiere FC</li>
+                    <li>🎬 Acesso ao Paramount+</li>
+                    <li>🎁 Sorteios semanais</li>
+                </ul>
+                <a href="https://wa.me/5511983208113" class="cta-button">Ativar no WhatsApp</a>
             </div>
         </section>
 
@@ -70,17 +110,58 @@
                 oportunidade de engajamento profundo com resultados tangíveis para os clubes."
             </blockquote>
             <div class="testimonial-author">
-                <img src="images/marcelo-circle.jpg" alt="Marcelo Moraes" class="author-image">
+                <img src="./images/marcelo-circle.jpg" alt="Marcelo Moraes" class="author-image">
                 <p class="author-name">Marcelo Moraes - CEO e founder</p>
             </div>
         </section>
     </main>
+
     <footer>
-        <a href="TermosdeUso.html" class="terms-and-privacy">Termos de uso</a>
-        <br>
-        <a href="PolticadePrivacidade.html" class="terms-and-privacy">Política de Privacidade</a>
-        <p class="copyright">Driblee 2025. Todos os direitos reservados.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <div class="footer-links">
+                    <div class="footer-contact-item">
+                        <span>📧</span>
+                        <a href="mailto:contato@driblee.com">contato@driblee.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>📱</span>
+                        <a href="https://wa.me/5511983208113">(11) 98320-8113</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html">Planos</a></li>
+                    <li><a href="quemsomos.html">Quem Somos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="TermosdeUso.html">Termos de Uso</a></li>
+                    <li><a href="PolticadePrivacidade.html">Política de Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 Driblee. Todos os direitos reservados.
+        </div>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 
 </html>

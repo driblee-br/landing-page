@@ -30,7 +30,6 @@
             }
         } catch {
             console.log('message event: ', event.data); // remove after testing
-            // your code goes here
             const response = await fetch('https://api.drible.com/api/whatsapp/embedded-signup/events', {
                 method: 'POST',
                 headers: {
