@@ -92,7 +92,7 @@ header.scrolled .nav-link:hover {
     text-align: center;
     padding: 8rem 5% 6rem 5%;
     background-image: linear-gradient(rgba(0, 34, 68, 0.4), rgba(0, 34, 68, 0.6)),
-        url('./images/hero.jpg');
+        url('images/hero.jpg');
     background-size: cover;
     background-position: center;
     min-height: 600px;
