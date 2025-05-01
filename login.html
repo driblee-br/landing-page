@@ -21,7 +21,7 @@
         try {
             const data = JSON.parse(event.data);
             if (data.type === 'WA_EMBEDDED_SIGNUP') {
-                console.log('message event: ', data); // remove after testing
+                console.log('message event 1: ', data); // remove after testing
                 const response = await fetch(`${URL_API}/api/whatsapp/embedded-signup/events`, {
                     method: 'POST',
                     headers: {
@@ -29,9 +29,10 @@
                     },
                     body: JSON.stringify(data)
                 });
+                console.log('response 1: ', response); // remove after testing
             }
         } catch {
-            console.log('message event: ', event.data); // remove after testing
+            console.log('message even 2: ', event.data); // remove after testing
             const response = await fetch(`${URL_API}/api/whatsapp/embedded-signup/events`, {
                 method: 'POST',
                 headers: {
@@ -41,6 +42,7 @@
                     raw: event.data
                 })
             });
+            console.log('response 2: ', response); // remove after testing
         }
     });
 
@@ -50,8 +52,8 @@
             const code = response.authResponse.code;
             const wabaId = response.authResponse.waba_id;
             const body = JSON.stringify({ code, waba_id: wabaId });
-            console.log("Body:", body);
-            console.log('response: ', code); // remove after testing
+            console.log("Body 1:", body);
+            console.log('response 1: ', code); // remove after testing
             const backendResponse = fetch(`${URL_API}/api/whatsapp/embedded-signup/code`, {
                 method: 'POST',
                 headers: {
@@ -59,11 +61,11 @@
                 },
                 body: body
             });
-            console.log(backendResponse);
+            console.log('backendResponse 1: ', backendResponse); // remove after testing
         } else {
-            console.log('response: ', response); // remove after testing
+            console.log('response 2: ', response); // remove after testing
             const body = JSON.stringify({ raw: response.data });
-            console.log("Body:", body);
+            console.log("Body 2:", body);
             const backendResponse = fetch(`${URL_API}/api/whatsapp/embedded-signup/code`, {
                 method: 'POST',
                 headers: {
@@ -71,7 +73,7 @@
                 },
                 body: body
             });
-            console.log(backendResponse);
+            console.log('backendResponse 2: ', backendResponse); // remove after testing
         }
     }
 
