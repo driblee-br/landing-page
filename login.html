@@ -49,19 +49,44 @@
     // Response callback
     const fbLoginCallback = (response) => {
         if (response.authResponse) {
-            const code = response.authResponse.code;
-            const wabaId = response.authResponse.waba_id;
-            const body = JSON.stringify({ code, waba_id: wabaId });
-            console.log("Body 1:", body);
-            console.log('response 1: ', code); // remove after testing
-            const backendResponse = fetch(`${URL_API}/api/whatsapp/embedded-signup/code`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: body
-            });
-            console.log('backendResponse 1: ', backendResponse); // remove after testing
+            (async () => {
+                const code = response.authResponse.code;
+
+                // Envia apenas o code para o backend para obter o access_token
+                const tokenResponse = await fetch(`${URL_API}/api/whatsapp/embedded-signup/code`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ code })
+                });
+
+                const tokenData = await tokenResponse.json();
+                const accessToken = tokenData.access_token;
+
+                // Usa o access_token para consultar o waba_id via /debug_token
+                const debugTokenUrl = `https://graph.facebook.com/v22.0/debug_token?input_token=${accessToken}`;
+                const debugResponse = await fetch(debugTokenUrl, {
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+                const debugData = await debugResponse.json();
+                const wabaId = debugData?.data?.granular_scopes?.[0]?.target_ids?.[0];
+
+                const body = JSON.stringify({ code, waba_id: wabaId });
+                console.log("Body 1:", body);
+                console.log('response 1: ', code); // remove after testing
+
+                const backendResponse = await fetch(`${URL_API}/api/whatsapp/embedded-signup/code`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: body
+                });
+                console.log('backendResponse 1: ', backendResponse); // remove after testing
+            })();
         } else {
             console.log('response 2: ', response); // remove after testing
             const body = JSON.stringify({ raw: response.data });
