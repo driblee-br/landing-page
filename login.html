@@ -18,13 +18,29 @@
     // Session logging message event listener
     // Substitua o event listener atual por este:
     window.addEventListener('message', (event) => {
-        // Filtra apenas mensagens do Facebook
         if (!event.origin.includes('facebook.com')) return;
 
         try {
-            const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+            // Tenta parsear como JSON primeiro
+            let data;
+            if (typeof event.data === 'string') {
+                try {
+                    data = JSON.parse(event.data);
+                } catch {
+                    // Se falhar, trata como query string
+                    const params = new URLSearchParams(event.data);
+                    if (params.has('code')) {
+                        console.log('Código de autorização recebido:', params.get('code'));
+                        // Você pode processar o code aqui se necessário
+                        return;
+                    }
+                    return; // Ignora outras mensagens não-JSON sem code
+                }
+            } else {
+                data = event.data;
+            }
 
-            // Processa apenas eventos WA_EMBEDDED_SIGNUP válidos
+            // Processa apenas eventos WA_EMBEDDED_SIGNUP
             if (data?.type === 'WA_EMBEDDED_SIGNUP') {
                 console.log('Evento WhatsApp recebido:', data);
                 fetch(`${URL_API}/api/whatsapp/embedded-signup/events`, {
@@ -38,7 +54,7 @@
                 });
             }
         } catch (error) {
-            console.log('Mensagem não processável:', event.data);
+            console.log('Erro ao processar mensagem:', error);
         }
     });
 
