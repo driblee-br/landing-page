@@ -16,33 +16,29 @@
     };
 
     // Session logging message event listener
-    window.addEventListener('message', async (event) => {
-        if (event.origin !== "https://www.facebook.com" && event.origin !== "https://web.facebook.com") return;
+    // Substitua o event listener atual por este:
+    window.addEventListener('message', (event) => {
+        // Filtra apenas mensagens do Facebook
+        if (!event.origin.includes('facebook.com')) return;
+
         try {
-            const data = JSON.parse(event.data);
-            if (data.type === 'WA_EMBEDDED_SIGNUP') {
-                console.log('message event 1: ', data); // remove after testing
-                const response = await fetch(`${URL_API}/api/whatsapp/embedded-signup/events`, {
+            const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+
+            // Processa apenas eventos WA_EMBEDDED_SIGNUP válidos
+            if (data?.type === 'WA_EMBEDDED_SIGNUP') {
+                console.log('Evento WhatsApp recebido:', data);
+                fetch(`${URL_API}/api/whatsapp/embedded-signup/events`, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
+                }).then(response => {
+                    if (!response.ok) {
+                        console.error('Erro no servidor:', response.status);
+                    }
                 });
-                console.log('response 1: ', response); // remove after testing
             }
-        } catch {
-            console.log('message even 2: ', event.data); // remove after testing
-            const response = await fetch(`${URL_API}/api/whatsapp/embedded-signup/events`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    raw: event.data
-                })
-            });
-            console.log('response 2: ', response); // remove after testing
+        } catch (error) {
+            console.log('Mensagem não processável:', event.data);
         }
     });
 
