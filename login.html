@@ -62,36 +62,6 @@
         window.removeEventListener('message', embeddedSignupListener)
     );
 
-    // Response callback
-    const fbLoginCallback = (response) => {
-        if (response.authResponse) {
-            const code = response.authResponse.code;
-
-            // Envia apenas o code para o backend
-            fetch(`${URL_API}/api/whatsapp/embedded-signup/code`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ code })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log("Success:", data);
-                    if (data.access_token) {
-                        // Aqui você tem o access_token e waba_id disponíveis
-                        console.log("Access Token:", data.access_token);
-                        console.log("WABA ID:", data.waba_id);
-                    }
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                });
-        } else {
-            console.log('Login failed:', response);
-        }
-    }
-
     // Launch method and callback registration
     const launchWhatsAppSignup = () => {
         FB.login(function (response) { }, {
