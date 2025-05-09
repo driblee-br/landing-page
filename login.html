@@ -15,9 +15,7 @@
         });
     };
 
-    // Session logging message event listener
-    // Substitua o event listener atual por este:
-    window.addEventListener('message', (event) => {
+    const embeddedSignupListener = (event) => {
         if (!event.origin.includes('facebook.com')) return;
 
         try {
@@ -56,7 +54,13 @@
         } catch (error) {
             console.log('Erro ao processar mensagem:', error);
         }
-    });
+    };
+
+    window.addEventListener('message', embeddedSignupListener);
+
+    window.addEventListener('beforeunload', () =>
+        window.removeEventListener('message', embeddedSignupListener)
+    );
 
     // Response callback
     const fbLoginCallback = (response) => {
@@ -90,13 +94,13 @@
 
     // Launch method and callback registration
     const launchWhatsAppSignup = () => {
-        FB.login(fbLoginCallback, {
+        FB.login(function (response) { }, {
             config_id: '3212942975512497', // your configuration ID goes here
+            auth_type: 'rerequest',
             response_type: 'code',
             override_default_response_type: true,
             extras: {
-                setup: {},
-                featureType: '',
+                setup: { solutionID: '698062969247056' },
                 sessionInfoVersion: '3',
             }
         });
