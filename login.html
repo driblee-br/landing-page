@@ -43,7 +43,7 @@
             // Processa apenas eventos WA_EMBEDDED_SIGNUP
             if (data?.type === 'WA_EMBEDDED_SIGNUP') {
                 console.log('Evento WhatsApp recebido:', data);
-                fetch(`${URL_API}/api/whatsapp/embedded-signup/events`, {
+                fetch(`${URL_API}/embedded-signup/events`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
@@ -64,7 +64,7 @@
             const code = response.authResponse.code;
 
             // Envia apenas o code para o backend
-            fetch(`${URL_API}/api/whatsapp/embedded-signup/code`, {
+            fetch(`${URL_API}/embedded-signup/code`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
