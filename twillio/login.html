@@ -1,0 +1,85 @@
+<html>
+<!-- SDK loading -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+<script>
+    //const URL_API = "http://localhost:8086";
+    const URL_API = "https://api.driblee.com/twillio";
+    // SDK initialization
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1703147563952436',
+            autoLogAppEvents: true,
+            xfbml: true,
+            version: 'v22.0'
+        });
+    };
+
+    const embeddedSignupListener = (event) => {
+        if (!event.origin.includes('facebook.com')) return;
+
+        try {
+            // Tenta parsear como JSON primeiro
+            let data;
+            if (typeof event.data === 'string') {
+                try {
+                    data = JSON.parse(event.data);
+                } catch {
+                    // Se falhar, trata como query string
+                    const params = new URLSearchParams(event.data);
+                    if (params.has('code')) {
+                        console.log('Código de autorização recebido:', params.get('code'));
+                        // Você pode processar o code aqui se necessário
+                        return;
+                    }
+                    return; // Ignora outras mensagens não-JSON sem code
+                }
+            } else {
+                data = event.data;
+            }
+
+            // Processa apenas eventos WA_EMBEDDED_SIGNUP
+            if (data?.type === 'WA_EMBEDDED_SIGNUP') {
+                console.log('Evento WhatsApp recebido:', data);
+                fetch(`${URL_API}/embedded-signup/events`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                }).then(response => {
+                    if (!response.ok) {
+                        console.error('Erro no servidor:', response.status);
+                    }
+                });
+            }
+        } catch (error) {
+            console.log('Erro ao processar mensagem:', error);
+        }
+    };
+
+    window.addEventListener('message', embeddedSignupListener);
+
+    window.addEventListener('beforeunload', () =>
+        window.removeEventListener('message', embeddedSignupListener)
+    );
+
+    // Launch method and callback registration
+    const launchWhatsAppSignup = () => {
+        FB.login(function (response) { }, {
+            config_id: '3212942975512497', // your configuration ID goes here
+            auth_type: 'rerequest',
+            response_type: 'code',
+            override_default_response_type: true,
+            extras: {
+                setup: { solutionID: '698062969247056' },
+                sessionInfoVersion: '3',
+            }
+        });
+    }
+</script>
+
+<!-- Launch button  -->
+<button onclick="launchWhatsAppSignup()"
+    style="background-color: #1877f2; border: 0; border-radius: 4px; color: #fff; cursor: pointer; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; height: 40px; padding: 0 24px;">Login
+    with Facebook</button>
+
+</html>
