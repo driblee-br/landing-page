@@ -4,7 +4,7 @@
 
 <script>
     //const URL_API = "http://localhost:8086";
-    const URL_API = "https://driblee-api-staging.vellune.tech/twilio";
+    const URL_API = "https://driblee-api-staging.vellune.tech";
     // SDK initialization
     window.fbAsyncInit = function () {
         FB.init({
@@ -41,7 +41,7 @@
             // Processa apenas eventos WA_EMBEDDED_SIGNUP
             if (data?.type === 'WA_EMBEDDED_SIGNUP') {
                 console.log('Evento WhatsApp recebido:', data);
-                fetch(`${URL_API}/embedded-signup/events`, {
+                fetch(`${URL_API}/embedded-signup/twilio/events`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
