@@ -3,8 +3,8 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
 <script>
-    //const URL_API = "http://localhost:8086";
-    const URL_API = "https://api.driblee.com";
+    // const URL_API = "https://api.driblee.com";
+    const URL_API = "https://driblee-api-staging.vellune.tech";
     // SDK initialization
     window.fbAsyncInit = function () {
         FB.init({
@@ -15,7 +15,9 @@
         });
     };
 
-    const embeddedSignupListener = (event) => {
+    // Session logging message event listener
+    // Substitua o event listener atual por este:
+    window.addEventListener('message', (event) => {
         if (!event.origin.includes('facebook.com')) return;
 
         try {
@@ -41,7 +43,7 @@
             // Processa apenas eventos WA_EMBEDDED_SIGNUP
             if (data?.type === 'WA_EMBEDDED_SIGNUP') {
                 console.log('Evento WhatsApp recebido:', data);
-                fetch(`${URL_API}/embedded-signup/events`, {
+                fetch(`${URL_API}/api/whatsapp/embedded-signup/events`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
@@ -54,23 +56,47 @@
         } catch (error) {
             console.log('Erro ao processar mensagem:', error);
         }
-    };
+    });
 
-    window.addEventListener('message', embeddedSignupListener);
+    // Response callback
+    const fbLoginCallback = (response) => {
+        if (response.authResponse) {
+            const code = response.authResponse.code;
 
-    window.addEventListener('beforeunload', () =>
-        window.removeEventListener('message', embeddedSignupListener)
-    );
+            // Envia apenas o code para o backend
+            fetch(`${URL_API}/api/whatsapp/embedded-signup/code`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ code })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Success:", data);
+                    if (data.access_token) {
+                        // Aqui você tem o access_token e waba_id disponíveis
+                        console.log("Access Token:", data.access_token);
+                        console.log("WABA ID:", data.waba_id);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+        } else {
+            console.log('Login failed:', response);
+        }
+    }
 
     // Launch method and callback registration
     const launchWhatsAppSignup = () => {
-        FB.login(function (response) { }, {
-            config_id: '3212942975512497', // your configuration ID goes here
-            auth_type: 'rerequest',
+        FB.login(fbLoginCallback, {
+            config_id: '3212942975512497',
             response_type: 'code',
             override_default_response_type: true,
             extras: {
-                setup: { solutionID: '698062969247056' },
+                setup: {},
+                featureType: '',
                 sessionInfoVersion: '3',
             }
         });
