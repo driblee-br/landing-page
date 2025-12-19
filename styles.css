@@ -530,6 +530,7 @@ header a{
   display: flex;
   justify-content: center;  /* centraliza o botão */
   text-align: center;       /* garante texto centralizado no contexto */
+  margin-top: 32px
 }
 
 .team-bottom-cta a{
