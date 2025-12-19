@@ -530,10 +530,6 @@ header a{
   margin-top: 28px;
 }
 
-.team-bottom-cta .btn-primary{
-  text-align: center;        /* texto central */
-}
-
 .team-bottom-cta:hover {
   background: #0b8a33;
   transform: translateY(-1px);
