@@ -425,10 +425,12 @@ header a{
 }
 
 /* Hero específico: mantém a estética, só muda a altura um pouco */
-.hero.hero-quemsomos{
-  min-height: 440px;
-  padding: 120px 0 70px;
+.hero.hero-quemsomos .hero-content p{
+  max-width: 720px;
+  margin: 20px auto 0;
+  text-wrap: balance;
 }
+
 
 /* Intro */
 .about-intro{
@@ -526,8 +528,15 @@ header a{
 
 .team-bottom-cta{
   display: flex;
-  justify-content: center;   /* centraliza o botão */
-  margin-top: 28px;
+  justify-content: center;  /* centraliza o botão */
+  text-align: center;       /* garante texto centralizado no contexto */
+}
+
+.team-bottom-cta a{
+  display: inline-flex;     /* força centralização interna */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Responsivo */
