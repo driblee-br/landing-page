@@ -1,69 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quem Somos - Driblee</title>
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽️</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&amp;family=Montserrat:wght@800&amp;display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quem Somos - Driblee</title>
+
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽️</text></svg>">
+
+  <!-- Mesmas fontes do index (Inter e Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">Driblee</a>
-            <a href="quemsomos.html" class="nav-link">Quem somos?</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero hero-quemsomos">
-            <div class="hero-content">
-                <h1>Nosso Time</h1>
-                <p class="hero-subtext">Transformamos as interações esportivas, oferecendo experiências personalizadas e
-                    imersivas que criam conexões profundas com os torcedores.</p>
-                <a href="https://wa.me/5511983208113" class="cta-button">Fale com a gente no WhatsApp</a>
-            </div>
-        </section>
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="logo-text">Driblee</span>
+    </a>
 
-        <section class="mission">
-            <div class="founders">
-                <div class="founder">
-                    <img src="images/marcelo-circle.jpg" alt="Marcelo" class="founder-image">
-                    <h3>Marcelo</h3>
-                    <p class="founder-role">Comercial & Negócios</p>
-                    <p class="founder-bio">Após carreira executiva em bancos (ABN AMRO e Santander), consultoria (BCG) e
-                        educação pública (SEE-SP), Marcelo fundou empresas na área da saúde e foi CEO/fundador da MEI
-                        Fácil, a maior plataforma de apoio ao MEI do Brasil, vendida ao banco digital Neon em 2020. Em
-                        2022, liderou a venda do Esporte Clube Bahia para o City Football Group. Educação: Engenharia
-                        (Unicamp e Institut National Polytechnique - França); MBA (Columbia University - EUA).</p>
-                </div>
-                <div class="founder">
-                    <img src="images/flavio.jpg" alt="Flavio" class="founder-image">
-                    <h3>Flavio</h3>
-                    <p class="founder-role">Tecnologia & Negócios</p>
-                    <p class="founder-bio">Cofundador da Silverguard, um ecossistema digital de segurança contra golpes,
-                        onde liderou times de produtos e tecnologia. Possui vasta experiência em planejamento e
-                        negócios, tendo ocupado posições de liderança em empresas de tecnologia como Quero Educação e
-                        Cobli. Também acumulou experiência na Morgan Stanley, onde se especializou em análise financeira
-                        e operações de fusões e aquisições. Educação: Engenharia (ITA).</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <a href="TermosdeUso.html" class="terms-and-privacy">Termos de uso</a>
-        <br>
-        <a href="PolticadePrivacidade.html" class="terms-and-privacy">Política de Privacidade</a>
-        <p class="copyright">Driblee 2025. Todos os direitos reservados.</p>
-    </footer>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Início</a>
+      <a href="quemsomos.html" class="nav-link">Quem Somos</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO (mesma estética do index, mas com título da página) -->
+  <section class="hero hero-quemsomos">
+    <div class="hero-content">
+      <h1>Quem Somos</h1>
+      <p>Um time que combina negócio e tecnologia para transformar conversas em relacionamento, engajamento e receita.</p>
+    </div>
+  </section>
+
+  <!-- INTRO / MISSÃO -->
+  <section class="about-intro">
+    <div class="container">
+      <h2>Nossa missão</h2>
+      <p>
+        Ajudar clubes a se conectarem melhor com seus torcedores usando WhatsApp e inteligência artificial — com conversas
+        personalizadas, escala e um modelo simples de operar no dia a dia.
+      </p>
+
+      <div class="about-cta">
+        <a href="https://wa.me/5511954922949" class="btn-primary">Falar com a Driblee</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIME / FUNDADORES -->
+  <section class="team">
+    <div class="container">
+      <h2>Nosso time</h2>
+      <p class="team-subtitle">
+        Experiência em tecnologia, negócios e operação com clubes — com histórico de execução no mundo real.
+      </p>
+
+      <div class="team-grid">
+
+        <!-- Marcelo -->
+        <article class="person-card">
+          <img src="images/marcelo-circle.jpg" alt="Marcelo Moraes" class="person-photo">
+
+          <div class="person-body">
+            <h3 class="person-name">Marcelo</h3>
+            <p class="person-role">Comercial & Negócios</p>
+
+            <p class="person-bio">
+              Após carreira executiva em bancos (ABN AMRO e Santander), consultoria (BCG) e educação pública (SEE-SP),
+              Marcelo fundou empresas na área da saúde e foi CEO/fundador da MEI Fácil, vendida ao banco digital Neon em 2020.
+              Em 2022, liderou a venda do Esporte Clube Bahia para o City Football Group.
+              Educação: Engenharia (Unicamp e Institut National Polytechnique – França); MBA (Columbia University – EUA).
+            </p>
+          </div>
+        </article>
+
+        <!-- Flavio -->
+        <article class="person-card">
+          <img src="images/flavio.jpg" alt="Flavio" class="person-photo">
+
+          <div class="person-body">
+            <h3 class="person-name">Flavio</h3>
+            <p class="person-role">Tecnologia & Negócios</p>
+
+            <p class="person-bio">
+              Cofundador da Silverguard, ecossistema digital de segurança contra golpes, onde liderou times de produto e tecnologia.
+              Experiência em planejamento e negócios, com posições de liderança em empresas como Quero Educação e Cobli.
+              Também atuou na Morgan Stanley com análise financeira e operações de M&A.
+              Educação: Engenharia (ITA).
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="team-bottom-cta">
+        <a href="https://wa.me/5511954922949" class="btn-primary">Fale com nosso time</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- MESMO FOOTER DO INDEX -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-col">
+      <h3 class="footer-title">Contato</h3>
+
+      <a class="footer-item" href="mailto:contato@driblee.com">
+        <span class="footer-icon" aria-hidden="true">✉️</span>
+        <span>contato@driblee.com</span>
+      </a>
+
+      <a class="footer-item" href="https://wa.me/5511954922949" target="_blank" rel="noopener">
+        <span class="footer-icon" aria-hidden="true">📱</span>
+        <span>(11) 95492-2949</span>
+      </a>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-title">Links Rápidos</h3>
+      <a class="footer-link" href="index.html">Início</a>
+      <a class="footer-link" href="quemsomos.html">Quem Somos</a>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-title">Legal</h3>
+      <a class="footer-link" href="TermosdeUso.html">Termos de Uso</a>
+      <a class="footer-link" href="PolticadePrivacidade.html">Política de Privacidade</a>
+    </div>
+
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-bottom">
+    © 2025 Driblee. Todos os direitos reservados.
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.querySelector('header')
+      .classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
+
 </body>
-
 </html>
