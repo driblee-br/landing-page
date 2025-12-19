@@ -524,10 +524,30 @@ header a{
   color: rgba(0,0,0,0.72);
 }
 
-.team-bottom-cta{
-  margin-top: 28px;
-  display: flex;
-  justify-content: center;
+.team-bottom-cta {
+  display: inline-block;
+  min-width: 350px;
+  padding: 14px 28px;
+  background: #0b8a33;
+  color: #eaeaea;
+  font-weight: 700;
+  border-radius: 16px;
+  text-decoration: none;
+
+  border: 1.5px solid #2e6417;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.team-bottom-cta:hover {
+  background: #0b8a33;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+.team-bottom-cta:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsivo */
