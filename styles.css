@@ -533,6 +533,8 @@ header a{
   font-weight: 700;
   border-radius: 16px;
   text-decoration: none;
+  justify-content:center;
+  text-align:center;
 
   border: 1.5px solid #2e6417;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
