@@ -530,17 +530,6 @@ header a{
   margin-top: 28px;
 }
 
-.team-bottom-cta:hover {
-  background: #0b8a33;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
-}
-
-.team-bottom-cta:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
 /* Responsivo */
 @media (max-width: 900px){
   .team-grid{
