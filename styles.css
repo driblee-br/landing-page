@@ -524,21 +524,14 @@ header a{
   color: rgba(0,0,0,0.72);
 }
 
-.team-bottom-cta {
-  display: inline-block;
-  min-width: 350px;
-  padding: 14px 28px;
-  background: #0b8a33;
-  color: #eaeaea;
-  font-weight: 700;
-  border-radius: 16px;
-  text-decoration: none;
-  justify-content:center;
-  text-align:center;
+.team-bottom-cta{
+  display: flex;
+  justify-content: center;   /* centraliza o botão */
+  margin-top: 28px;
+}
 
-  border: 1.5px solid #2e6417;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
-  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+.team-bottom-cta .btn-primary{
+  text-align: center;        /* texto central */
 }
 
 .team-bottom-cta:hover {
